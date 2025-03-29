@@ -50,31 +50,3 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Terminal typing effect
-document.addEventListener("DOMContentLoaded", function () {
-  const terminalTexts = document.querySelectorAll(".terminal-text");
-
-  terminalTexts.forEach((text, index) => {
-    const content = text.textContent;
-    text.textContent = "";
-
-    let i = 0;
-    function typeTerminal() {
-      if (i < content.length) {
-        text.textContent += content.charAt(i);
-        i++;
-        setTimeout(typeTerminal, 30);
-      } else if (index < terminalTexts.length - 1) {
-        setTimeout(() => {
-          i = 0;
-          terminalTexts[index + 1].textContent = "";
-          typeTerminal();
-        }, 500);
-      }
-    }
-
-    if (index === 0) {
-      setTimeout(typeTerminal, 1000);
-    }
-  });
-});
