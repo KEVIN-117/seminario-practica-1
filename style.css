@@ -4,6 +4,37 @@ body {
   overflow-x: hidden;
 }
 
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.particle {
+  position: absolute;
+  display: block;
+  background: #00f7ff;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: floatParticles 15s infinite linear;
+}
+
+@keyframes floatParticles {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
 .neon-border {
   position: relative;
 }
@@ -18,11 +49,6 @@ body {
   border: 1px solid #00f0ff;
   z-index: -1;
   animation: glow 2s ease-in-out infinite alternate;
-}
-
-.grid-bg {
-  background-image: radial-gradient(#00f0ff20 1px, transparent 1px);
-  background-size: 30px 30px;
 }
 
 .text-gradient {
@@ -105,22 +131,6 @@ body {
 /* Binary background */
 .binary-bg {
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18h1v1h-1zm7 0h1v1h-1zm-7 7h1v1h-1zm7 0h1v1h-1zm-7 7h1v1h-1zm7 0h1v1h-1z' fill='%2300f0ff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
-
-/* Data flow animation */
-.data-flow {
-  background: linear-gradient(
-    45deg,
-    #0a0a0a 25%,
-    #121212 25%,
-    #121212 50%,
-    #0a0a0a 50%,
-    #0a0a0a 75%,
-    #121212 75%,
-    #121212 100%
-  );
-  background-size: 20px 20px;
-  animation: data-flow 15s linear infinite;
 }
 
 @keyframes glitch-anim {
@@ -350,4 +360,25 @@ body {
   50% {
     opacity: 0;
   }
+}
+
+.set-clip-path {
+  clip-path: polygon(
+    74.1% 44.1%,
+    100% 61.6%,
+    97.5% 26.9%,
+    85.5% 0.1%,
+    80.7% 2%,
+    72.5% 32.5%,
+    60.2% 62.4%,
+    52.4% 68.1%,
+    47.5% 58.3%,
+    45.2% 34.5%,
+    27.5% 76.7%,
+    0.1% 64.9%,
+    17.9% 100%,
+    27.6% 76.8%,
+    76.1% 97.7%,
+    74.1% 44.1%
+  );
 }

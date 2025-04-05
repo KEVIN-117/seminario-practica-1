@@ -66,11 +66,36 @@
 
 <body class="text-white">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-dark-light bg-opacity-80 backdrop-blur-md" x-data="{ isOpen: false }">
+    <nav class="fixed w-full z-50  bg-opacity-80 backdrop-blur-md" x-data="{ isOpen: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between h-16 mt-4">
                 <div class="flex items-center">
-                    <div class="text-2xl font-bold text-gradient">TECH SPECIALIST</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                        viewBox="0 0 64 64">
+                        <linearGradient id="_r_aP5JxeTUbgl5L40n7Ca_NU48HGBGk0Do_gr1" x1="32" x2="32" y1="22.915"
+                            y2="39.482" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#6dc7ff"></stop>
+                            <stop offset="1" stop-color="#e6abff"></stop>
+                        </linearGradient>
+                        <polygon fill="url(#_r_aP5JxeTUbgl5L40n7Ca_NU48HGBGk0Do_gr1)" points="32,24 16,31 32,40 48,31">
+                        </polygon>
+                        <linearGradient id="_r_aP5JxeTUbgl5L40n7Cb_NU48HGBGk0Do_gr2" x1="32" x2="32" y1="4.319"
+                            y2="56.536" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#1a6dff"></stop>
+                            <stop offset="1" stop-color="#c822ff"></stop>
+                        </linearGradient>
+                        <path fill="url(#_r_aP5JxeTUbgl5L40n7Cb_NU48HGBGk0Do_gr2)"
+                            d="M15.979,32.214l15.029,8.588c0.306,0.174,0.648,0.261,0.991,0.261s0.686-0.087,0.992-0.262 l15.028-8.588c0.473-0.271,0.819-0.729,0.949-1.257c0.131-0.528,0.038-1.094-0.254-1.553L33.687,5.789 c-0.369-0.58-1-0.926-1.687-0.926c-0.688,0-1.318,0.346-1.688,0.926L15.284,29.404c-0.292,0.459-0.385,1.024-0.254,1.553 C15.16,31.486,15.507,31.944,15.979,32.214z M17.598,30.838L31,25.477v13.017L17.598,30.838z M33,25.477l13.4,5.36L33,38.495 V25.477z M45.71,28.407L33,23.323V8.434L45.71,28.407z M31,8.434v14.889l-12.71,5.084L31,8.434z">
+                        </path>
+                        <linearGradient id="_r_aP5JxeTUbgl5L40n7Cc_NU48HGBGk0Do_gr3" x1="32" x2="32" y1="4.319"
+                            y2="56.536" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#1a6dff"></stop>
+                            <stop offset="1" stop-color="#c822ff"></stop>
+                        </linearGradient>
+                        <path fill="url(#_r_aP5JxeTUbgl5L40n7Cc_NU48HGBGk0Do_gr3)"
+                            d="M50.178,35.027c-0.319-0.354-0.846-0.434-1.255-0.19L32,44.923L15.077,34.837 c-0.409-0.245-0.935-0.166-1.255,0.19c-0.319,0.355-0.344,0.886-0.058,1.268L30.39,58.5c0.381,0.518,0.968,0.814,1.61,0.814 s1.229-0.296,1.605-0.808l16.63-22.211C50.521,35.913,50.497,35.382,50.178,35.027z M18.396,39.143L31,46.655v9.323L18.396,39.143z M33,55.968v-9.313l12.602-7.511L33,55.968z">
+                        </path>
+                    </svg>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -124,13 +149,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen grid-bg flex flex-col justify-center items-center relative overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div
-                class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-neon-blue/10 to-transparent opacity-30">
-            </div>
-            <!-- Binary code overlay -->
-            <div class="absolute inset-0 binary-bg opacity-10"></div>
-        </div>
+        <div class="particles" id="particles"></div>
+
         <div class="container mx-auto px-4 z-10 text-center">
             <h1 class="text-5xl md:text-7xl font-bold mb-4">
                 <span class="glitch inline-block" data-text="Hello, I'm">Hello, I'm</span>
@@ -175,8 +195,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-dark-light">
+    <section id="about" class="relative h-[100vh] py-20 bg-slate-900/30">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-2">About <span class="text-gradient">Me</span></h2>
@@ -239,393 +258,23 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Specializations Section -->
-    <section id="specializations" class="py-20 bg-dark data-flow">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-2">My <span class="text-gradient">Specializations</span></h2>
-                <div class="w-24 h-1 bg-neon-blue mx-auto"></div>
-                <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
-                    I specialize in four key areas of modern technology, bringing a comprehensive approach to every
-                    project.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Frontend Specialization -->
-                <div class="bg-dark-medium p-8 rounded-lg neon-border card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="text-neon-blue text-4xl mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gradient">Frontend Development</h3>
-                    </div>
-                    <p class="text-gray-300 mb-6">
-                        Creating responsive, intuitive, and visually appealing user interfaces using modern frameworks
-                        and libraries.
-                        I focus on performance optimization, accessibility, and delivering exceptional user experiences.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Modern UI: 95%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-blue h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">React Ecosystem: 90%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-blue h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Performance: 85%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-blue h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Vue</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Next.js</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">TypeScript</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <!-- Backend Specialization -->
-                <div class="bg-dark-medium p-8 rounded-lg neon-border card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="text-neon-purple text-4xl mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gradient">Backend Development</h3>
-                    </div>
-                    <p class="text-gray-300 mb-6">
-                        Building robust, scalable, and secure server-side applications and APIs. I specialize in
-                        designing efficient
-                        database structures, implementing authentication systems, and optimizing backend performance.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">API Design: 90%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-purple h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Database Systems: 95%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-purple h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Security: 85%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-purple h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">Python</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">GraphQL</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">MongoDB</span>
-                        <span
-                            class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">PostgreSQL</span>
-                    </div>
-                </div>
-
-                <!-- AI Specialization -->
-                <div class="bg-dark-medium p-8 rounded-lg neon-border card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="text-neon-pink text-4xl mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gradient-ai">Artificial Intelligence</h3>
-                    </div>
-                    <p class="text-gray-300 mb-6">
-                        Developing intelligent systems using machine learning and deep learning techniques. I focus on
-                        natural language processing,
-                        computer vision, and creating practical AI solutions that solve real-world problems.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Machine Learning: 90%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-pink h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">NLP: 85%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-pink h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Deep Learning: 80%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-pink h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">TensorFlow</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">PyTorch</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">OpenAI</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">Computer
-                            Vision</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">LLMs</span>
-                    </div>
-                </div>
-
-                <!-- DevOps Specialization -->
-                <div class="bg-dark-medium p-8 rounded-lg neon-border card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="text-neon-green text-4xl mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gradient-devops">DevOps & Cloud</h3>
-                    </div>
-                    <p class="text-gray-300 mb-6">
-                        Implementing CI/CD pipelines, infrastructure as code, and cloud-native solutions. I specialize
-                        in containerization,
-                        orchestration, and building resilient, scalable infrastructure on major cloud platforms.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">CI/CD: 95%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-green h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Cloud Architecture: 90%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-green h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-1/3 text-sm text-gray-400">Containerization: 85%</div>
-                            <div class="w-2/3 bg-dark rounded-full h-2">
-                                <div class="bg-neon-green h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Docker</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Kubernetes</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">AWS</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Terraform</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">GitHub
-                            Actions</span>
-                    </div>
-                </div>
-            </div>
+        <div class="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-pink-500 to-violet-500
+                       sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] set-clip-path"></div>
+        </div>
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#06b6d4] to-[#0c4a6e]
+                      sm:left-[calc(50%+36rem)] sm:w-[72.1875rem] set-clip-path"></div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-dark-light">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-2">Technical <span class="text-gradient">Skills</span></h2>
-                <div class="w-24 h-1 bg-neon-blue mx-auto"></div>
-                <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
-                    My comprehensive technical toolkit spans multiple domains, enabling me to deliver end-to-end
-                    solutions.
-                </p>
-            </div>
+    <section id="specializations" class="py-20"></section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend Skills -->
-                <div class="bg-dark-medium p-6 rounded-lg neon-border card-hover">
-                    <div class="text-neon-blue text-4xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Frontend Technologies</h3>
-                    <p class="text-gray-300 mb-4">
-                        Modern frameworks and tools for building responsive, interactive user interfaces.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Vue.js</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Next.js</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">TypeScript</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">HTML5/CSS3</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Tailwind CSS</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Redux</span>
-                        <span class="px-3 py-1 bg-neon-blue/10 text-neon-blue rounded-full text-sm">Webpack</span>
-                    </div>
-                </div>
+    <section id="skills" class="py-20 "></section>
 
-                <!-- Backend Skills -->
-                <div class="bg-dark-medium p-6 rounded-lg neon-border card-hover">
-                    <div class="text-neon-purple text-4xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Backend & Databases</h3>
-                    <p class="text-gray-300 mb-4">
-                        Server-side technologies and database systems for building robust applications.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">Express</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">Python</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">Django</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">FastAPI</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">MongoDB</span>
-                        <span
-                            class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">PostgreSQL</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">Redis</span>
-                        <span class="px-3 py-1 bg-neon-purple/10 text-neon-purple rounded-full text-sm">GraphQL</span>
-                    </div>
-                </div>
-
-                <!-- AI Skills -->
-                <div class="bg-dark-medium p-6 rounded-lg neon-border card-hover">
-                    <div class="text-neon-pink text-4xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">AI & Machine Learning</h3>
-                    <p class="text-gray-300 mb-4">
-                        Tools and frameworks for developing intelligent systems and models.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">TensorFlow</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">PyTorch</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">Scikit-learn</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">Pandas</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">NumPy</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">OpenAI API</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">Hugging Face</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">Computer
-                            Vision</span>
-                        <span class="px-3 py-1 bg-neon-pink/10 text-neon-pink rounded-full text-sm">NLP</span>
-                    </div>
-                </div>
-
-                <!-- DevOps Skills -->
-                <div class="bg-dark-medium p-6 rounded-lg neon-border card-hover">
-                    <div class="text-neon-green text-4xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">DevOps & Cloud</h3>
-                    <p class="text-gray-300 mb-4">
-                        Tools and platforms for continuous integration, deployment, and cloud infrastructure.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Docker</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Kubernetes</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">AWS</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Azure</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">GCP</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Terraform</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">GitHub
-                            Actions</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Jenkins</span>
-                        <span class="px-3 py-1 bg-neon-green/10 text-neon-green rounded-full text-sm">Prometheus</span>
-                    </div>
-                </div>
-
-                <!-- Tools & Methodologies -->
-                <div class="bg-dark-medium p-6 rounded-lg neon-border card-hover">
-                    <div class="text-neon-orange text-4xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Tools & Methodologies</h3>
-                    <p class="text-gray-300 mb-4">
-                        Development tools and methodologies for efficient software delivery.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">Git</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">Agile</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">Scrum</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">Jira</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">Figma</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">VS Code</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">Postman</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">CI/CD</span>
-                        <span class="px-3 py-1 bg-neon-orange/10 text-neon-orange rounded-full text-sm">TDD</span>
-                    </div>
-                </div>
-
-                <!-- Security & Performance -->
-                <div class="bg-dark-medium p-6 rounded-lg neon-border card-hover">
-                    <div class="text-neon-yellow text-4xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Security & Performance</h3>
-                    <p class="text-gray-300 mb-4">
-                        Techniques and tools for securing applications and optimizing performance.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">OAuth</span>
-                        <span class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">JWT</span>
-                        <span class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">HTTPS</span>
-                        <span
-                            class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">Encryption</span>
-                        <span class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">OWASP</span>
-                        <span class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">Caching</span>
-                        <span class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">Load
-                            Balancing</span>
-                        <span class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">CDN</span>
-                        <span
-                            class="px-3 py-1 bg-neon-yellow/10 text-neon-yellow rounded-full text-sm">Optimization</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-dark binary-bg">
+    <section id="projects" class="py-20 relative">
+        <div class="particles" id="particlesProjects"></div>
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-2">Featured <span class="text-gradient">Projects</span></h2>
@@ -670,7 +319,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project 1 - Frontend -->
                     <div x-show="activeFilter === 'all' || activeFilter === 'frontend'"
-                        class="bg-dark-medium rounded-lg overflow-hidden card-hover group">
+                        class="bg-slate-900/40 rounded-lg border border-neon-blue overflow-hidden card-hover group">
                         <div class="relative h-60 overflow-hidden">
                             <!-- Replace with project image -->
                             <div
@@ -685,10 +334,10 @@
                                         real-time data visualization.</p>
                                     <div class="flex justify-center gap-3">
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">View
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">View
                                             Demo</a>
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">Source
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">Source
                                             Code</a>
                                     </div>
                                 </div>
@@ -710,7 +359,7 @@
 
                     <!-- Project 2 - Backend -->
                     <div x-show="activeFilter === 'all' || activeFilter === 'backend'"
-                        class="bg-dark-medium rounded-lg overflow-hidden card-hover group">
+                        class="bg-slate-900/40 rounded-lg border border-neon-blue overflow-hidden card-hover group">
                         <div class="relative h-60 overflow-hidden">
                             <!-- Replace with project image -->
                             <div
@@ -725,10 +374,10 @@
                                         high-traffic API requests.</p>
                                     <div class="flex justify-center gap-3">
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">View
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">View
                                             Demo</a>
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">Source
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">Source
                                             Code</a>
                                     </div>
                                 </div>
@@ -751,7 +400,7 @@
 
                     <!-- Project 3 - AI -->
                     <div x-show="activeFilter === 'all' || activeFilter === 'ai'"
-                        class="bg-dark-medium rounded-lg overflow-hidden card-hover group">
+                        class="bg-slate-900/40 rounded-lg border border-neon-purple overflow-hidden card-hover group">
                         <div class="relative h-60 overflow-hidden">
                             <!-- Replace with project image -->
                             <div
@@ -766,10 +415,10 @@
                                         using NLP models.</p>
                                     <div class="flex justify-center gap-3">
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">View
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">View
                                             Demo</a>
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">Source
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">Source
                                             Code</a>
                                     </div>
                                 </div>
@@ -792,7 +441,7 @@
 
                     <!-- Project 4 - DevOps -->
                     <div x-show="activeFilter === 'all' || activeFilter === 'devops'"
-                        class="bg-dark-medium rounded-lg overflow-hidden card-hover group">
+                        class="bg-slate-900/40 rounded-lg border border-neon-purple overflow-hidden card-hover group">
                         <div class="relative h-60 overflow-hidden">
                             <!-- Replace with project image -->
                             <div
@@ -807,10 +456,10 @@
                                         deployments.</p>
                                     <div class="flex justify-center gap-3">
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">View
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">View
                                             Demo</a>
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">Source
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">Source
                                             Code</a>
                                     </div>
                                 </div>
@@ -833,7 +482,7 @@
 
                     <!-- Project 5 - Full Stack -->
                     <div x-show="activeFilter === 'all' || activeFilter === 'frontend' || activeFilter === 'backend'"
-                        class="bg-dark-medium rounded-lg overflow-hidden card-hover group">
+                        class="bg-slate-900/40 rounded-lg border border-neon-purple overflow-hidden card-hover group">
                         <div class="relative h-60 overflow-hidden">
                             <!-- Replace with project image -->
                             <div
@@ -848,10 +497,10 @@
                                         and payment integration.</p>
                                     <div class="flex justify-center gap-3">
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">View
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">View
                                             Demo</a>
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">Source
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">Source
                                             Code</a>
                                     </div>
                                 </div>
@@ -872,8 +521,7 @@
                     </div>
 
                     <!-- Project 6 - AI + DevOps -->
-                    <div x-show="activeFilter === 'all' || activeFilter === 'ai' || activeFilter === 'devops'"
-                        class="bg-dark-medium rounded-lg overflow-hidden card-hover group">
+                    <div class="bg-slate-900/40 rounded-lg border border-neon-purple overflow-hidden card-hover group">
                         <div class="relative h-60 overflow-hidden">
                             <!-- Replace with project image -->
                             <div
@@ -888,10 +536,10 @@
                                         machine learning models.</p>
                                     <div class="flex justify-center gap-3">
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">View
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">View
                                             Demo</a>
                                         <a href="#"
-                                            class="px-4 py-2 bg-dark text-white rounded-full hover:bg-dark-light transition-colors duration-300">Source
+                                            class="px-4 py-2 bg-dark text-white rounded-full hover: transition-colors duration-300">Source
                                             Code</a>
                                     </div>
                                 </div>
@@ -916,8 +564,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark-light">
+    <section id="contact" class="py-20 relative bg-slate-900/30">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-2">Contact <span class="text-gradient">Me</span></h2>
@@ -929,7 +576,7 @@
 
             <div class="flex flex-col md:flex-row gap-10">
                 <div class="md:w-1/2">
-                    <div class="bg-dark-medium p-8 rounded-lg neon-border h-full">
+                    <div class="bg-slate-900/70 p-8 rounded-xl neon-border h-full">
                         <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
                         <div class="space-y-6">
                             <div class="flex items-start">
@@ -1014,7 +661,7 @@
                 </div>
 
                 <div class="md:w-1/2">
-                    <form class="bg-dark-medium p-8 rounded-lg neon-border"
+                    <form class="bg-slate-900/70 p-8 rounded-lg neon-border"
                         x-data="{ name: '', email: '', subject: '', message: '', submitted: false }">
                         <h3 class="text-2xl font-bold mb-6">Send Message</h3>
 
@@ -1059,14 +706,23 @@
                 </div>
             </div>
         </div>
+
+        <div class="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-2xl" aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-pink-500 to-violet-500
+                       sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] set-clip-path"></div>
+        </div>
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-2xl sm:top-[calc(100%-30rem)]"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#06b6d4] to-[#0c4a6e]
+                      sm:left-[calc(50%+36rem)] sm:w-[72.1875rem] set-clip-path"></div>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 bg-dark-light border-t border-gray-800">
+    <footer class="py-8  border-t border-gray-800">
         <div class="container mx-auto px-4 text-center">
             <div class="text-2xl font-bold text-gradient mb-4">h4ck4u 1i8n</div>
             <p class="text-gray-400 mb-6">Full-Stack Developer | AI Engineer | DevOps Specialist | Cloud Architect</p>
-            <div class="flex justify-center space-x-8 mb-6">
+            <div class="flex justify-center space-x-8 mb-6 md:space-x-12 lg:space-x-16 xl:space-x-20 md:flex-row md:items-center flex-wrap">
                 <a href="#home" class="text-gray-400 hover:text-neon-blue transition-colors duration-300">Home</a>
                 <a href="#about" class="text-gray-400 hover:text-neon-blue transition-colors duration-300">About</a>
                 <a href="#specializations"
@@ -1082,11 +738,10 @@
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
-    <script src="app.js">
-        // Update current year
-
-    </script>
+    
+    <script src="./js/utils.js"></script>
+    <script src="app.js"></script>
+    <script src="/js/buildSpecializations.js"></script>
 </body>
 
 </html>
